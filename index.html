@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Red Snapper Solutions Ltd – independent IT consultancy specialising in solution architecture, cloud, data and digital transformation across insurance, banking and asset management."
+    content="Red Snapper Solutions Ltd – independent IT consultancy specialising in solution architecture, ai, cloud, data and digital transformation across insurance, banking and asset management."
   />
   <style>
     :root {
@@ -74,21 +74,20 @@
     }
 
     .logo {
-      width: 44px;
-      height: 44px;
+      width: 40px;
+      height: 40px;
       border-radius: 999px;
       background: #ffffff;
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      color: #b91c1c; /* fish stroke colour */
       box-shadow: 0 10px 25px rgba(185, 28, 28, 0.35);
-      overflow: hidden;
     }
 
-    .logo img {
-      width: 52px;
-      height: auto;
-      display: block;
+    .logo svg {
+      width: 28px;
+      height: 28px;
     }
 
     .nav-links {
@@ -169,20 +168,14 @@
     }
 
     .hero h1 {
-      font-size: clamp(2.3rem, 4.4vw, 3rem);
-      line-height: 1.1;
-      margin: 1rem 0 0.4rem;
+      font-size: clamp(2.2rem, 4vw, 2.9rem);
+      line-height: 1.15;
+      margin: 1rem 0 0.75rem;
       letter-spacing: -0.03em;
     }
 
     .hero h1 span {
       color: var(--primary);
-    }
-
-    .hero-name-tagline {
-      margin: 0 0 0.9rem;
-      font-size: 1.02rem;
-      color: var(--muted);
     }
 
     .hero-subtitle {
@@ -609,20 +602,24 @@
     <div class="nav">
       <div class="nav-brand">
         <div class="logo" aria-label="Red Snapper logo">
-          <!-- Embedded base64 red snapper image -->
-          <img
-            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYn
-PS0uHy8xLjQzNygtLisBCgoKDg0OGxAQGy0mICYtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAWgB4AMBIgACEQEDEQH/
-xAAcAAEAAgIDAQAAAAAAAAAAAAAABQYEBwEDCAL/xABDEAACAQMBBQUEBwYEBwAAAAAAAAECAwQFEQYhEjFBUWFxBxMiMoGRFBUjQlJicoKSscHR8PEzU4KiFkPw
-/8QAGQEAAwEBAQAAAAAAAAAAAAAAAQIDAAQF/8QALhEAAQMDAgQEBwAAAAAAAAAAAAECAwAEESESMUEiUWEycbGh0RQjgf/aAAwDAQACEQMRAD8A+0REQBERAERE
-BERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREH//Z"
-            alt="Red Snapper Solutions Ltd logo – red snapper fish"
-          />
+          <svg viewBox="0 0 64 32" aria-hidden="true">
+            <!-- Fish body -->
+            <path
+              d="M4 16 L16 6 H40 Q52 6 60 16 Q52 26 40 26 H16 Z"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+            />
+            <!-- Eye -->
+            <circle cx="24" cy="14" r="1.5" fill="currentColor" />
+          </svg>
         </div>
         <div>
           Red Snapper Solutions Ltd
           <div style="font-size: 0.7rem; text-transform: none; font-weight: 500; color: var(--muted);">
-            IT &amp; Solution Architecture Consultancy
+            IT & Solution Architecture Consultancy
           </div>
         </div>
       </div>
@@ -648,15 +645,12 @@ BERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREH//Z"
           Independent consultancy for complex financial services change
         </div>
         <h1>
-          <span>Red Snapper Solutions Ltd</span>
+          Pragmatic <span>Solution Architecture</span> for cloud, data & digital transformation.
         </h1>
-        <p class="hero-name-tagline">
-          IT &amp; Solution Architecture Consultancy for cloud, data &amp; digital transformation.
-        </p>
         <p class="hero-subtitle">
-          Providing hands-on architecture leadership for organisations that need to modernise legacy platforms,
-          unlock value from data, and deliver sustainable digital journeys across insurance, banking and asset
-          management.
+          Red Snapper Solutions Ltd provides hands-on architecture leadership for organisations that need to
+          modernise legacy platforms, unlock value from data, and deliver sustainable digital journeys across
+          insurance, banking and asset management.
         </p>
 
         <div class="hero-grid">
@@ -705,7 +699,7 @@ BERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREH//Z"
           </div>
           <div class="hero-stat">
             <strong>25+ programmes</strong>
-            Delivered across insurance, banking &amp; asset management
+            Delivered across insurance, banking & asset management
           </div>
         </div>
 
@@ -724,9 +718,8 @@ BERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREH//Z"
           <h2 class="section-title">Independent solution architecture with real-world delivery experience</h2>
         </div>
         <p class="section-subtitle">
-          Red Snapper Solutions Ltd is led by Solution Architect Simon Hulbert, bringing over two decades of
-          experience delivering complex change from greenfield platforms to large-scale digital and cloud
-          transformations.
+          Red Snapper Solutions is led by Solution Architect Simon Hulbert, bringing over two decades of experience
+          delivering complex change from greenfield platforms to large-scale digital and cloud transformations.
         </p>
       </div>
 
@@ -772,7 +765,7 @@ BERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREH//Z"
 
       <div class="key-list">
         <div class="card">
-          <h3>Digital &amp; Cloud Transformation Architecture</h3>
+          <h3>Digital & Cloud Transformation Architecture</h3>
           <p>
             Architecture leadership for major digital and cloud initiatives, including migrations from legacy
             platforms to modern web and API-based solutions.
@@ -786,7 +779,7 @@ BERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREH//Z"
         </div>
 
         <div class="card">
-          <h3>Event-Driven &amp; Data-Centric Platforms</h3>
+          <h3>Event-Driven & Data-Centric Platforms</h3>
           <p>
             Design and implementation of event-driven architectures and real-time data pipelines to support
             analytics, document processing and regulatory reporting.
@@ -800,7 +793,7 @@ BERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREH//Z"
         </div>
 
         <div class="card">
-          <h3>AI, Graph &amp; Insight-Driven Solutions</h3>
+          <h3>AI, Graph & Insight-Driven Solutions</h3>
           <p>
             Practical application of AI and graph technologies to unlock insight from complex and unstructured
             data, with robust governance and enterprise controls.
@@ -814,7 +807,7 @@ BERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREH//Z"
         </div>
 
         <div class="card">
-          <h3>Architecture Governance &amp; Decision Support</h3>
+          <h3>Architecture Governance & Decision Support</h3>
           <p>
             Support for CIO, CDO and architecture functions in establishing clear, sustainable architecture practices.
           </p>
@@ -833,7 +826,7 @@ BERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREH//Z"
       <div class="section-header">
         <div>
           <div class="section-kicker">Expertise</div>
-          <h2 class="section-title">Domain &amp; technical focus</h2>
+          <h2 class="section-title">Domain & technical focus</h2>
         </div>
         <p class="section-subtitle">
           Deep experience across financial services, with particular strength in specialty insurance and
@@ -843,26 +836,26 @@ BERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREH//Z"
 
       <div class="grid-2">
         <div class="card">
-          <h3>Industry &amp; domain experience</h3>
+          <h3>Industry & domain experience</h3>
           <div class="chip-list">
             <span class="chip chip-strong">Specialty Insurance</span>
             <span class="chip">Retail / Commercial Banking</span>
             <span class="chip">Private Banking</span>
             <span class="chip">Asset Management</span>
             <span class="chip">Digital Transformation</span>
-            <span class="chip">Regulatory &amp; Compliance Platforms</span>
+            <span class="chip">Regulatory & Compliance Platforms</span>
             <span class="chip">Client Lifecycle Management</span>
             <span class="chip">Customer Self-Service Journeys</span>
           </div>
         </div>
 
         <div class="card">
-          <h3>Technology &amp; architecture capabilities</h3>
+          <h3>Technology & architecture capabilities</h3>
           <div class="chip-list">
-            <span class="chip chip-strong">AWS (serverless &amp; containerised)</span>
+            <span class="chip chip-strong">AWS (serverless & containerised)</span>
             <span class="chip">Event-driven architectures</span>
-            <span class="chip">Microservices &amp; APIs</span>
-            <span class="chip">Apache Kafka &amp; EventBridge</span>
+            <span class="chip">Microservices & APIs</span>
+            <span class="chip">Apache Kafka & EventBridge</span>
             <span class="chip">Search (Solr, ELK)</span>
             <span class="chip">Graph (Neo4j)</span>
             <span class="chip">NoSQL (Cassandra, DynamoDB)</span>
@@ -904,7 +897,7 @@ BERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREH//Z"
           <h2 class="section-title">Track record of delivery</h2>
         </div>
         <p class="section-subtitle">
-          Red Snapper Solutions Ltd builds on hands-on experience delivering large-scale change with organisations
+          Red Snapper Solutions builds on hands-on experience delivering large-scale change with organisations
           including global insurers and tier-one banks.
         </p>
       </div>
@@ -1021,7 +1014,7 @@ BERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREH//Z"
           <p>
             <strong>LinkedIn:</strong>
             <!-- Replace with your profile URL -->
-            <a href="#" target="_blank" rel="noopener">View profile</a>
+            <a href="#" target="www.linkedin.com/in/Simon-Hulbert rel="noopener">View profile</a>
           </p>
 
           <div class="contact-block">
@@ -1049,7 +1042,7 @@ BERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREBERAEREH//Z"
             </div>
             <div>
               <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="you@company.com" />
+              <input id="email" name="email" type="email" placeholder="simon.a.hulbert@gmail.com" />
             </div>
             <div>
               <label for="message">How can Red Snapper Solutions help?</label>

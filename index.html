@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Red Snapper Solutions Ltd | IT & Solution Architecture Consultancy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Red Snapper Solutions Ltd – independent IT consultancy specialising in solution architecture, cloud, data and digital transformation across insurance, banking and asset management."
+  />
+  <style>
+    :root {
+      --primary: #c62828;
+      --primary-soft: #fdeaea;
+      --dark: #1f2933;
+      --muted: #6b7280;
+      --bg: #f5f5f7;
+      --card: #ffffff;
+      --accent: #0f766e;
+      --radius-lg: 18px;
+      --radius-xl: 28px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top left, #fff, #eef2f7);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(248, 250, 252, 0.9);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.6rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #b91c1c; /* fish stroke colour */
+      box-shadow: 0 10px 25px rgba(185, 28, 28, 0.35);
+    }
+
+    .logo svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      border-color: rgba(148, 163, 184, 0.5);
+      background: rgba(248, 250, 252, 0.9);
+      text-decoration: none;
+      color: var(--dark);
+    }
+
+    .nav-cta {
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(220, 38, 38, 0.45);
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(220, 38, 38, 0.5);
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3.5rem;
+    }
+
+    /* Hero */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 2.25rem;
+      align-items: center;
+      padding: 2.5rem 0 1.5rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(248, 250, 252, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.28);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 4vw, 2.9rem);
+      line-height: 1.15;
+      margin: 1rem 0 0.75rem;
+      letter-spacing: -0.03em;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero-subtitle {
+      font-size: 1.02rem;
+      color: var(--muted);
+      max-width: 38rem;
+    }
+
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 1.75rem 0;
+    }
+
+    .pill {
+      border-radius: 999px;
+      padding: 0.3rem 0.9rem;
+      background: rgba(15, 23, 42, 0.94);
+      color: #e5e7eb;
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .pill-soft {
+      background: rgba(248, 113, 113, 0.08);
+      color: #b91c1c;
+      border: 1px solid rgba(248, 113, 113, 0.35);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      border-radius: 999px;
+      padding: 0.8rem 1.6rem;
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: 0 18px 45px rgba(185, 28, 28, 0.6);
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+
+    .btn-primary span {
+      font-size: 1.1rem;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 24px 55px rgba(185, 28, 28, 0.7);
+    }
+
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 0.75rem 1.3rem;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(248, 250, 252, 0.75);
+      color: var(--dark);
+      font-weight: 500;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 1.75rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .hero-meta span {
+      font-weight: 600;
+      color: var(--dark);
+      display: block;
+      font-size: 0.9rem;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left, #fee2e2, #991b1b);
+      border-radius: var(--radius-xl);
+      padding: 1.5rem 1.6rem;
+      color: #fef2f2;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -40px auto;
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle, rgba(254, 226, 226, 0.8), transparent);
+      opacity: 0.7;
+    }
+
+    .hero-card h2 {
+      font-size: 1.1rem;
+      margin: 0 0 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.9;
+    }
+
+    .hero-card p {
+      margin: 0.1rem 0;
+      font-size: 0.95rem;
+    }
+
+    .hero-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin-top: 1.25rem;
+      font-size: 0.8rem;
+    }
+
+    .hero-stat {
+      padding: 0.55rem 0.7rem;
+      border-radius: 0.9rem;
+      background: rgba(15, 23, 42, 0.3);
+      border: 1px solid rgba(248, 250, 252, 0.12);
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-size: 0.9rem;
+    }
+
+    .hero-tagline {
+      margin-top: 1.2rem;
+      font-size: 0.82rem;
+      opacity: 0.95;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(248, 250, 252, 0.45);
+      background: rgba(15, 23, 42, 0.25);
+    }
+
+    /* Sections */
+
+    section {
+      margin-top: 3rem;
+    }
+
+    .section-header {
+      margin-bottom: 1.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.76rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 32rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 1.8rem;
+      align-items: flex-start;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 1.3rem 1.4rem;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.85rem;
+      font-size: 1.05rem;
+    }
+
+    .card p {
+      margin: 0.2rem 0;
+      font-size: 0.9rem;
+    }
+
+    .card ul {
+      margin: 0.4rem 0 0.2rem;
+      padding-left: 1.1rem;
+      font-size: 0.9rem;
+    }
+
+    .card li {
+      margin-bottom: 0.25rem;
+    }
+
+    .key-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.9rem;
+    }
+
+    .chip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      font-size: 0.8rem;
+    }
+
+    .chip {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: #f3f4f6;
+      border: 1px solid rgba(209, 213, 219, 0.8);
+      color: #374151;
+      white-space: nowrap;
+    }
+
+    .chip-strong {
+      background: var(--primary-soft);
+      border-color: rgba(248, 113, 113, 0.5);
+      color: #7f1d1d;
+      font-weight: 500;
+    }
+
+    /* Experience */
+
+    .timeline {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 1.2rem;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.2rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--primary);
+      box-shadow: 0 0 0 4px rgba(248, 113, 113, 0.45);
+    }
+
+    .timeline-role {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .timeline-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline ul {
+      margin: 0.15rem 0;
+      padding-left: 1.1rem;
+      font-size: 0.85rem;
+    }
+
+    /* Contact */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.8rem;
+      align-items: flex-start;
+    }
+
+    .contact-detail {
+      font-size: 0.9rem;
+    }
+
+    .contact-detail p {
+      margin: 0.3rem 0;
+    }
+
+    .contact-block {
+      margin-top: 0.75rem;
+      padding: 0.9rem 1rem;
+      border-radius: 1rem;
+      background: #f9fafb;
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+      font-size: 0.85rem;
+    }
+
+    form {
+      display: grid;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    label {
+      font-weight: 500;
+      margin-bottom: 0.15rem;
+      display: inline-block;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.6rem 0.7rem;
+      border-radius: 0.9rem;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      font-family: inherit;
+      font-size: 0.9rem;
+      background: rgba(249, 250, 251, 0.98);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 1px rgba(220, 38, 38, 0.65);
+      background: #ffffff;
+    }
+
+    .small {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.3);
+      padding: 1.3rem 1.25rem 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    footer span {
+      white-space: nowrap;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 880px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 720px) {
+      main {
+        padding-inline: 1rem;
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .grid-2,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      footer {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="nav-brand">
+        <div class="logo" aria-label="Red Snapper logo">
+          <svg viewBox="0 0 64 32" aria-hidden="true">
+            <!-- Fish body -->
+            <path
+              d="M4 16 L16 6 H40 Q52 6 60 16 Q52 26 40 26 H16 Z"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+            />
+            <!-- Eye -->
+            <circle cx="24" cy="14" r="1.5" fill="currentColor" />
+          </svg>
+        </div>
+        <div>
+          Red Snapper Solutions Ltd
+          <div style="font-size: 0.7rem; text-transform: none; font-weight: 500; color: var(--muted);">
+            IT & Solution Architecture Consultancy
+          </div>
+        </div>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+        Book a call
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div>
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Independent consultancy for complex financial services change
+        </div>
+        <h1>
+          Pragmatic <span>Solution Architecture</span> for cloud, data & digital transformation.
+        </h1>
+        <p class="hero-subtitle">
+          Red Snapper Solutions Ltd provides hands-on architecture leadership for organisations that need to
+          modernise legacy platforms, unlock value from data, and deliver sustainable digital journeys across
+          insurance, banking and asset management.
+        </p>
+
+        <div class="hero-grid">
+          <div class="pill">
+            <span>20+ years</span> designing enterprise platforms
+          </div>
+          <div class="pill pill-soft">
+            Event-driven • Cloud-native • Data-centric • AI-enabled
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+            <span>➝</span> Schedule an introductory chat
+          </button>
+          <button class="btn-ghost" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'});">
+            View consulting services
+          </button>
+        </div>
+
+        <div class="hero-meta">
+          <div>
+            <span>Industry focus</span>
+            Specialty Insurance · Banking · Asset Management
+          </div>
+          <div>
+            <span>Engagement model</span>
+            Fractional architect · Project delivery · Advisory
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="At a glance">
+        <h2>At a glance</h2>
+        <p><strong>Lead Consultant:</strong> Simon Hulbert – Solution Architect</p>
+        <p>Based in Horsham, West Sussex · Working with clients across the UK and internationally.</p>
+
+        <div class="hero-stat-grid">
+          <div class="hero-stat">
+            <strong>20+ years</strong>
+            Enterprise Solution Architecture experience
+          </div>
+          <div class="hero-stat">
+            <strong>13m users</strong>
+            Architected platforms used daily by millions of customers
+          </div>
+          <div class="hero-stat">
+            <strong>25+ programmes</strong>
+            Delivered across insurance, banking & asset management
+          </div>
+        </div>
+
+        <div class="hero-tagline">
+          <span>✓</span>
+          Architecture that balances innovation with legacy realities.
+        </div>
+      </aside>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker">About</div>
+          <h2 class="section-title">Independent solution architecture with real-world delivery experience</h2>
+        </div>
+        <p class="section-subtitle">
+          Red Snapper Solutions is led by Solution Architect Simon Hulbert, bringing over two decades of experience
+          delivering complex change from greenfield platforms to large-scale digital and cloud transformations.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Approach</h3>
+          <p>
+            The consultancy combines deep technical understanding with pragmatic architectural design to deliver
+            solutions that are both sustainable and value-driven.
+          </p>
+          <ul>
+            <li>Start from business outcomes and realistic constraints.</li>
+            <li>Balance modern architecture patterns with legacy environments.</li>
+            <li>Favour reusable patterns and clear decision-making over one-off designs.</li>
+            <li>Support delivery teams end-to-end across the SDLC.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Typical client challenges</h3>
+          <ul>
+            <li>Modernising legacy systems without disrupting business-critical operations.</li>
+            <li>Moving to AWS and cloud-native architectures in a controlled, staged way.</li>
+            <li>Building event-driven and data-centric platforms for analytics and self-service.</li>
+            <li>Unlocking value from unstructured data using AI, search and graph technologies.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker">Services</div>
+          <h2 class="section-title">Consulting services for change-driven organisations</h2>
+        </div>
+        <p class="section-subtitle">
+          Flexible engagement models – from short advisory pieces and architecture reviews to hands-on delivery
+          leadership for multi-year transformation programmes.
+        </p>
+      </div>
+
+      <div class="key-list">
+        <div class="card">
+          <h3>Digital & Cloud Transformation Architecture</h3>
+          <p>
+            Architecture leadership for major digital and cloud initiatives, including migrations from legacy
+            platforms to modern web and API-based solutions.
+          </p>
+          <ul>
+            <li>Cloud migration strategy and target architecture (AWS focus).</li>
+            <li>Design of web and mobile customer journeys and self-service portals.</li>
+            <li>Definition of non-functional requirements and quality attributes.</li>
+            <li>Architecture runway and roadmap creation for multi-year programmes.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Event-Driven & Data-Centric Platforms</h3>
+          <p>
+            Design and implementation of event-driven architectures and real-time data pipelines to support
+            analytics, document processing and regulatory reporting.
+          </p>
+          <ul>
+            <li>Event-driven integration using Kafka and AWS event services.</li>
+            <li>Streaming pipelines for near real-time analytics and observability.</li>
+            <li>Document classification, summarisation and structured data extraction.</li>
+            <li>Regulatory and compliance data platforms across multiple regions.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>AI, Graph & Insight-Driven Solutions</h3>
+          <p>
+            Practical application of AI and graph technologies to unlock insight from complex and unstructured
+            data, with robust governance and enterprise controls.
+          </p>
+          <ul>
+            <li>Agentic AI blueprints for secure, workflow-driven automation.</li>
+            <li>Graph-based analytical applications (e.g. Neo4j) for relationship insight.</li>
+            <li>Enterprise search solutions leveraging Solr/ELK and modern observability tooling.</li>
+            <li>Proof-of-concepts through to production-ready designs.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Architecture Governance & Decision Support</h3>
+          <p>
+            Support for CIO, CDO and architecture functions in establishing clear, sustainable architecture practices.
+          </p>
+          <ul>
+            <li>Design authorities and architecture review processes.</li>
+            <li>Reusable patterns, standards and guardrails.</li>
+            <li>Package evaluation and vendor selection.</li>
+            <li>Stakeholder communication and executive-level storytelling.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expertise -->
+    <section id="expertise">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker">Expertise</div>
+          <h2 class="section-title">Domain & technical focus</h2>
+        </div>
+        <p class="section-subtitle">
+          Deep experience across financial services, with particular strength in specialty insurance and
+          large-scale banking and asset-management platforms.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Industry & domain experience</h3>
+          <div class="chip-list">
+            <span class="chip chip-strong">Specialty Insurance</span>
+            <span class="chip">Retail / Commercial Banking</span>
+            <span class="chip">Private Banking</span>
+            <span class="chip">Asset Management</span>
+            <span class="chip">Digital Transformation</span>
+            <span class="chip">Regulatory & Compliance Platforms</span>
+            <span class="chip">Client Lifecycle Management</span>
+            <span class="chip">Customer Self-Service Journeys</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Technology & architecture capabilities</h3>
+          <div class="chip-list">
+            <span class="chip chip-strong">AWS (serverless & containerised)</span>
+            <span class="chip">Event-driven architectures</span>
+            <span class="chip">Microservices & APIs</span>
+            <span class="chip">Apache Kafka & EventBridge</span>
+            <span class="chip">Search (Solr, ELK)</span>
+            <span class="chip">Graph (Neo4j)</span>
+            <span class="chip">NoSQL (Cassandra, DynamoDB)</span>
+            <span class="chip">Relational (Oracle, PostgreSQL)</span>
+            <span class="chip">Java / JSON / React</span>
+            <span class="chip">Observability (Splunk, Datadog, AppDynamics, New Relic)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top: 1.6rem;">
+        <h3>Selected accomplishments</h3>
+        <ul>
+          <li>
+            Introduced open-source search and analytics capabilities to a major bank, supporting high-volume
+            customer journeys and enabling a strategic “Bank of the Future” roadmap.
+          </li>
+          <li>
+            Delivered a global regulatory data platform for 40+ countries, integrating regional systems into a
+            unified, multilingual web solution – delivered on time and to budget.
+          </li>
+          <li>
+            Implemented a fully integrated product administration system ahead of schedule, enabling the
+            business to double expected product take-up; the solution was adopted as a future-state group standard.
+          </li>
+          <li>
+            Designed event-based document processing architecture for classification, summarisation and data
+            extraction, significantly improving speed and scalability.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker">Experience</div>
+          <h2 class="section-title">Track record of delivery</h2>
+        </div>
+        <p class="section-subtitle">
+          Red Snapper Solutions builds on hands-on experience delivering large-scale change with organisations
+          including global insurers and tier-one banks.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Recent consulting engagements</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-role">Solution Architect – Specialty Insurance Client</div>
+            <div class="timeline-meta">Dec 2022 – Present · Multiple contract renewals</div>
+            <ul>
+              <li>
+                Designed and implemented event-based architecture for document classification, summarisation and
+                structured data extraction.
+              </li>
+              <li>
+                Contributed to agentic AI blueprints, defining how AI-driven agents operate securely within
+                enterprise workflows.
+              </li>
+              <li>
+                Architected a graph-based analytical application leveraging Neo4j for near real-time insight.
+              </li>
+              <li>
+                Championed event-driven principles to enhance data reuse, observability and resilience.
+              </li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-role">Solution Architect – Global Banking Client</div>
+            <div class="timeline-meta">Dec 2020 – Dec 2022 · Multiple contract renewals</div>
+            <ul>
+              <li>
+                Senior architect for client lifecycle management solutions, supporting self-service and internal
+                staff journeys.
+              </li>
+              <li>
+                Delivered multiple global product solutions on AWS using API and event-driven strategies.
+              </li>
+              <li>
+                Worked across UK, Switzerland and Singapore, aligning regional objectives to a global architecture
+                model.
+              </li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-role">Lead Architect – Digital Transformation Programme</div>
+            <div class="timeline-meta">Sep 2019 – Oct 2020 · £20m programme</div>
+            <ul>
+              <li>
+                Led a major digital transformation migrating legacy systems to a modern client web application and
+                API-based architecture.
+              </li>
+              <li>Implemented serverless AWS platform, reducing hosting cost and improving scalability.</li>
+              <li>Championed non-functional improvements including adoption of NoSQL and event-driven patterns.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-role">Solution Architect – High-scale Digital Banking Platform</div>
+            <div class="timeline-meta">Apr 2016 – Sep 2019 · Multiple contract renewals</div>
+            <ul>
+              <li>
+                Designed solutions for mobile and desktop applications used by more than 13 million customers
+                daily.
+              </li>
+              <li>
+                Drove innovation via Hortonworks-based enterprise search using Solr/Kafka/Cassandra.
+              </li>
+              <li>Defined technology roadmaps aligned to long-term product strategy and maintainability.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="small" style="margin-top: 1rem;">
+          Earlier roles include architecture and engineering positions with HSBC Commercial Banking, Allianz,
+          Fidelity Investments, and Legal &amp; General.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker">Contact</div>
+          <h2 class="section-title">Let’s talk about your next change initiative</h2>
+        </div>
+        <p class="section-subtitle">
+          Whether you’re at the early stage of shaping a transformation programme or need help unblocking a
+          specific delivery, an initial conversation can quickly clarify where architecture can add the most value.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="card contact-detail">
+          <h3>Contact details</h3>
+          <p><strong>Red Snapper Solutions Ltd</strong></p>
+          <p>
+            66 Smithbarn<br />
+            Horsham<br />
+            West Sussex<br />
+            RH13 6DU<br />
+            United Kingdom
+          </p>
+
+          <p>
+            <strong>Phone:</strong> <a href="tel:+447766642129">+44 (0)7766 642129</a><br />
+            <strong>Email:</strong>
+            <a href="mailto:Simon.A.Hulbert@gmail.com">Simon.A.Hulbert@gmail.com</a>
+          </p>
+
+          <p>
+            <strong>LinkedIn:</strong>
+            <!-- Replace with your profile URL -->
+            <a href="#" target="_blank" rel="noopener">View profile</a>
+          </p>
+
+          <div class="contact-block">
+            <strong>Availability</strong>
+            <p>
+              Open to short advisory engagements, architecture reviews and longer-term transformation programmes.
+              Remote and hybrid engagements supported across the UK and internationally.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Enquiry form (example)</h3>
+          <p class="small">
+            This form is static in this template – your web developer can wire it up to your preferred email or CRM.
+          </p>
+          <form>
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" />
+            </div>
+            <div>
+              <label for="company">Company</label>
+              <input id="company" name="company" type="text" placeholder="Organisation name" />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@company.com" />
+            </div>
+            <div>
+              <label for="message">How can Red Snapper Solutions help?</label>
+              <textarea id="message" name="message" placeholder="Briefly describe your goals, challenges or upcoming initiatives."></textarea>
+            </div>
+            <button type="submit" class="btn-primary">
+              <span>➝</span> Send enquiry
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>&copy; <!--YEAR--> Red Snapper Solutions Ltd. All rights reserved.</div>
+    <span>Designed around real-world delivery experience in financial services.</span>
+  </footer>
+
+  <script>
+    // Simple automatic year update
+    document.addEventListener("DOMContentLoaded", function () {
+      const footer = document.querySelector("footer div");
+      if (footer) {
+        const year = new Date().getFullYear();
+        footer.innerHTML = footer.innerHTML.replace("<!--YEAR-->", year);
+      }
+    });
+  </script>
+</body>
+</html>
